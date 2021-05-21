@@ -1,10 +1,17 @@
 //
-// Created by s1000633 on 5/19/21.
+// Created by s1000633 on 5/21/21.
 //
+
+#ifndef LEETCODE_MYQUEUE_H
+#define LEETCODE_MYQUEUE_H
+
+#include <stack>
+#include <iostream>
+
 class MyQueue {
 private:
-    stack<int> pusher;
-    stack<int> popper;
+    std::stack<int> pusher;
+    std::stack<int> popper;
 public:
     /** Initialize your data structure here. */
     MyQueue() {
@@ -12,32 +19,16 @@ public:
     }
 
     /** Push element x to the back of queue. */
-    void push(int x) {
-        pusher.push(x);
-    }
+    void push(int x);
 
     /** Removes the element from in front of queue and returns that element. */
-    int pop() {
-        int res = peek();
-        popper.pop();
-        return res;
-    }
+    int pop();
 
     /** Get the front element. */
-    int peek() {
-        if (popper.empty()) {
-            while (!pusher.empty()) {
-                popper.push(pusher.top());
-                pusher.pop();
-            }
-        }
-        return popper.top();
-    }
+    int peek();
 
     /** Returns whether the queue is empty. */
-    bool empty() {
-        return popper.empty() && pusher.empty();
-    }
+    bool empty();
 };
 
 /**
@@ -48,3 +39,6 @@ public:
  * int param_3 = obj->peek();
  * bool param_4 = obj->empty();
  */
+
+
+#endif //LEETCODE_MYQUEUE_H
