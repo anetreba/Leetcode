@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/reverseString.dir/ReverseString.cpp.o CMakeFiles/reverseString.dir/Solution.cpp.o  -o ../reverseString 

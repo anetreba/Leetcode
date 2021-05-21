@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 2.8)
 project(Leetcode LANGUAGES CXX)
 
 add_subdirectory(BinaryTreeLevelOrderTraversal)
+add_subdirectory(EvaluateReversePolishNotation)
 add_subdirectory(FibonacciNumber)
 add_subdirectory(FindCommonCharacters)
 add_subdirectory(ImplementQueueUsingStacks)
