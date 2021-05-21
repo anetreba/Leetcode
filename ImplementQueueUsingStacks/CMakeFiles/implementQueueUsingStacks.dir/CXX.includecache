@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/s1000633/Leetcode/ImplementQueueUsingStacks/ImplementQueueUsingStacks .cpp
+MyQueue.h
+/home/s1000633/Leetcode/ImplementQueueUsingStacks/MyQueue.h
+
+/home/s1000633/Leetcode/ImplementQueueUsingStacks/MyQueue.cpp
+MyQueue.h
+/home/s1000633/Leetcode/ImplementQueueUsingStacks/MyQueue.h
+
+/home/s1000633/Leetcode/ImplementQueueUsingStacks/MyQueue.h
+stack
+-
+iostream
+-
+

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/s1000633/Leetcode/BinaryTreeLevelOrderTraversal/BinaryTreeLevelOrderTraversal.cpp
+Solution.h
+/home/s1000633/Leetcode/BinaryTreeLevelOrderTraversal/Solution.h
+
+/home/s1000633/Leetcode/BinaryTreeLevelOrderTraversal/Solution.cpp
+Solution.h
+/home/s1000633/Leetcode/BinaryTreeLevelOrderTraversal/Solution.h
+
+/home/s1000633/Leetcode/BinaryTreeLevelOrderTraversal/Solution.h
+vector
+-
+queue
+-
+iostream
+-
+

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/s1000633/Leetcode/FibonacciNumber/FibonacciNumber.cpp
+Solution.h
+/home/s1000633/Leetcode/FibonacciNumber/Solution.h
+
+/home/s1000633/Leetcode/FibonacciNumber/Solution.cpp
+Solution.h
+/home/s1000633/Leetcode/FibonacciNumber/Solution.h
+
+/home/s1000633/Leetcode/FibonacciNumber/Solution.h
+iostream
+-
+
