@@ -5,8 +5,8 @@
 #include "Solution.h"
 
 int Solution::fib(int n) {
-    if (n < 2)
-        return n;
+    if (n < 1)
+        return -1;
     int n1 = 0;
     int n2 = 1;
     int n0 = 0;

@@ -16,6 +16,7 @@ private:
     int x;
     int y;
 public:
+    bool is_number(std::string &number);
     int evalRPN(std::vector <std::string> &tokens);
 };
 
