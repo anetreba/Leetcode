@@ -5,6 +5,8 @@
 #include "Solution.h"
 
 bool Solution::isValid(std::string s) {
+    if (s.empty())
+        return false;
     std::stack<char> stack;
 
     for (auto ch: s) {
