@@ -2,7 +2,7 @@ version: 2.1
 executors:
   exectr:
     docker:
-      - image: anetreba/DockerfileRepositoryForCpp:latest
+      - image: yevheniiandrus/leetcode:latest
 jobs:
   build:
     executor: exectr
@@ -33,7 +33,7 @@ jobs:
       - run:
           name: Execute Tests
           command: |
-            cd FibonacciNumber
+            cd FibomacciNumber
             cd build
             ./tests --gtest_output=XML
       - store_test_results:
