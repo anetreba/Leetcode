@@ -2,7 +2,7 @@ version: 2.1
 executors:
   exectr:
     docker:
-      - image: anetreba/YourDockerRepoName:latest
+      - image: anetreba/DockerfileRepositoryForCpp:latest
 jobs:
   build:
     executor: exectr
