@@ -2,7 +2,7 @@ version: 2.1
 executors:
   exectr:
     docker:
-      - image: yevheniiandrus/leetcode:latest
+      - image: YourGitHubName/YourDockerRepoName:latest
 jobs:
   build:
     executor: exectr
@@ -34,9 +34,9 @@ jobs:
           name: Execute Tests
           command: |
             cd FibonacciNumber/build
-            ./tests --gtest_output=XML
+            ./tests_fib --gtest_output=XML
       - store_test_results:
-          path: FibonacciNumber/build
+          path: build
 workflows:
   version: 2
   build-and-test:
