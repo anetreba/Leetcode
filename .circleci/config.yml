@@ -1,0 +1,212 @@
+version: 2.1
+executors:
+  exectr:
+    docker:
+      - image: yevheniiandrus/leetcode:latest
+jobs:
+  build:
+    executor: exectr
+    steps:
+      - checkout
+      - run:
+          name: Setup gtest child repo
+          command: |
+            cd third_party
+            git submodule init
+            git submodule update
+      - run:
+          name: Setup cmake and build artifacts
+          command: |
+            cd FibonacciNumber
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../BinaryTreeLevelOrderTraversal
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../EvaluateReversePolishNotation
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../FindCommonCharacters
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../FindKClosestElements
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../GrayCode
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../ImplementQueueUsingStacks
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../InterleavingString
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../LCA
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../MaxArea
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../MaxAreaOfIsland
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../MaxConsecutiveOnesIII
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../OpenTheLock
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../OutOfBoundaryPaths
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../ReduceArraySizetoTheHalf
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../RedundantConnection
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../ReshapeMatrix
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../ReverseLinkedListII
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../ReverseString
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../SortArray
+            mkdir build
+            cd build
+            cmake ..
+            make
+            cd ../../ValidParentheses
+            mkdir build
+            cd build
+            cmake ..
+            make
+
+      - persist_to_workspace:
+          root: .
+          paths: FibonacciNumber/build
+            BinaryTreeLevelOrderTraversal/build
+            EvaluateReversePolishNotation/build
+            FindCommonCharacters/build
+            FindKClosestElements/build
+            GrayCode/build
+            ImplementQueueUsingStacks/build
+            InterleavingString/build
+            LCA/build
+            MaxArea/build
+            MaxAreaOfIsland/build
+            MaxConsecutiveOnesIII/build
+            NumMatchSubseq/build
+            OpenTheLock/build
+            OutOfBoundaryPaths/build
+            ReduceArraySizetoTheHalf/build
+            RedundantConnection/build
+            ReshapeMatrix/build
+            ReverseLinkedListII/build
+            ReverseString/build
+            SortArray/build
+            ValidParentheses/build
+  test:
+    executor: exectr
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Execute Tests
+          command: |
+            cd FibonacciNumber/build
+            ./tests_fib --gtest_output=XML
+            cd ../../BinaryTreeLevelOrderTraversal/build
+            ./tests_binaryTreeLevelOrderTraversal --gtest_output=XML
+            cd ../../EvaluateReversePolishNotation/build
+            ./tests_reverse_polish_notation --gtest_output=XML
+            cd ../../FindCommonCharacters/build
+            ./tests_find_com_ch --gtest_output=XML
+            cd ../../FindKClosestElements/build
+            ./tests --gtest_output=XML
+            cd ../../GrayCode/build
+            ./tests --gtest_output=XML
+            cd ../../ImplementQueueUsingStacks/build
+            ./tests_my_queue --gtest_output=XML
+            cd ../../InterleavingString/build
+            ./test --gtest_output=XML
+            cd ../../LCA/build
+            ./test --gtest_output=XML
+            cd ../../MaxArea/build
+            ./test --gtest_output=XML
+            cd ../../MaxAreaOfIsland/build
+            ./test --gtest_output=XML
+            cd ../../MaxConsecutiveOnesIII/build
+            ./test --gtest_output=XML
+            cd ../../NumMatchSubseq/build
+            ./test --gtest_output=XML
+            cd ../../OpenTheLock/build
+            ./test --gtest_output=XML
+            cd ../../OutOfBoundaryPaths/build
+            ./test --gtest_output=XML
+            cd ../../ReduceArraySizetoTheHalf/build
+            ./test --gtest_output=XML
+            cd ../../RedundantConnection/build
+            ./test --gtest_output=XML
+            cd ../../ReshapeMatrix/build
+            ./tests --gtest_output=XML
+            cd ../../ReverseLinkedListII/build
+            ./test --gtest_output=XML
+            cd ../../ReverseString/build
+            ./tests_reverse_string --gtest_output=XML
+            cd ../../SortArray/build
+            ./tests_sort_array --gtest_output=XML
+            cd ../../ValidParentheses/build
+            ./tests_valid_parent --gtest_output=XML
+
+      - store_test_results:
+          path: build
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
