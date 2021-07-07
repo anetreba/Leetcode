@@ -77,6 +77,11 @@ jobs:
             cd build
             cmake ..
             make
+            cd ../../NumMatchSubseq
+            mkdir build
+            cd build
+            cmake ..
+            make
             cd ../../OpenTheLock
             mkdir build
             cd build
