@@ -67,6 +67,11 @@ jobs:
             cd build
             cmake ..
             make
+            cd ../../LongestIncreasingSubsequence
+            mkdir build
+            cd build
+            cmake ..
+            make
             cd ../../MaxArea
             mkdir build
             cd build
@@ -145,6 +150,7 @@ jobs:
             InterleavingString/build
             KthSmallestElement/build
             LCA/build
+            LongestIncreasingSubsequence/build
             MaxArea/build
             MaxAreaOfIsland/build
             MaxConsecutiveOnesIII/build
@@ -185,6 +191,8 @@ jobs:
             cd ../../KthSmallestElement/build
             ./test --gtest_output=XML
             cd ../../LCA/build
+            ./test --gtest_output=XML
+            cd ../../LongestIncreasingSubsequence/build
             ./test --gtest_output=XML
             cd ../../MaxArea/build
             ./test --gtest_output=XML
