@@ -57,6 +57,11 @@ jobs:
             cd build
             cmake ..
             make
+            cd ../../IsomorphicStrings
+            mkdir build
+            cd build
+            cmake ..
+            make
             cd ../../KthSmallestElement
             mkdir build
             cd build
@@ -148,6 +153,7 @@ jobs:
             GrayCode/build
             ImplementQueueUsingStacks/build
             InterleavingString/build
+            IsomorphicStrings/build
             KthSmallestElement/build
             LCA/build
             LongestIncreasingSubsequence/build
@@ -187,6 +193,8 @@ jobs:
             cd ../../ImplementQueueUsingStacks/build
             ./tests_my_queue --gtest_output=XML
             cd ../../InterleavingString/build
+            ./test --gtest_output=XML
+            cd ../../IsomorphicStrings/build
             ./test --gtest_output=XML
             cd ../../KthSmallestElement/build
             ./test --gtest_output=XML
