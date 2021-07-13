@@ -42,6 +42,11 @@ jobs:
             cd build
             cmake ..
             make
+            cd ../../FindPeakElement
+            mkdir build
+            cd build
+            cmake ..
+            make
             cd ../../GrayCode
             mkdir build
             cd build
@@ -150,6 +155,7 @@ jobs:
             EvaluateReversePolishNotation/build
             FindCommonCharacters/build
             FindKClosestElements/build
+            FindPeakElement/build
             GrayCode/build
             ImplementQueueUsingStacks/build
             InterleavingString/build
@@ -188,6 +194,8 @@ jobs:
             ./tests_find_com_ch --gtest_output=XML
             cd ../../FindKClosestElements/build
             ./tests --gtest_output=XML
+            cd ../../FindPeakElement/build
+            ./test --gtest_output=XML
             cd ../../GrayCode/build
             ./tests --gtest_output=XML
             cd ../../ImplementQueueUsingStacks/build
