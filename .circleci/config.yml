@@ -27,6 +27,11 @@ jobs:
             cd build
             cmake ..
             make
+            cd ../../CustomSortString
+            mkdir build
+            cd build
+            cmake ..
+            make
             cd ../../EvaluateReversePolishNotation
             mkdir build
             cd build
@@ -152,6 +157,7 @@ jobs:
           root: .
           paths: FibonacciNumber/build
             BinaryTreeLevelOrderTraversal/build
+            CustomSortString/build
             EvaluateReversePolishNotation/build
             FindCommonCharacters/build
             FindKClosestElements/build
@@ -188,6 +194,8 @@ jobs:
             ./tests_fib --gtest_output=XML
             cd ../../BinaryTreeLevelOrderTraversal/build
             ./tests_binaryTreeLevelOrderTraversal --gtest_output=XML
+            cd ../../CustomSortString/build
+            ./test --gtest_output=XML
             cd ../../EvaluateReversePolishNotation/build
             ./tests_reverse_polish_notation --gtest_output=XML
             cd ../../FindCommonCharacters/build
