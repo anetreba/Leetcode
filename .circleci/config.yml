@@ -152,6 +152,11 @@ jobs:
             cd build
             cmake ..
             make
+            cd ../../ValidTriangleNumber
+            mkdir build
+            cd build
+            cmake ..
+            make
 
       - persist_to_workspace:
           root: .
@@ -182,6 +187,7 @@ jobs:
             ReverseString/build
             SortArray/build
             ValidParentheses/build
+            ValidTriangleNumber/build
   test:
     executor: exectr
     steps:
@@ -244,6 +250,8 @@ jobs:
             ./tests_sort_array --gtest_output=XML
             cd ../../ValidParentheses/build
             ./tests_valid_parent --gtest_output=XML
+            cd ../../ValidTriangleNumber/build
+            ./test --gtest_output=XML
 
       - store_test_results:
           path: build
