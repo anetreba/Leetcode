@@ -152,6 +152,11 @@ jobs:
             cd build
             cmake ..
             make
+            cd ../../ThreeEqualParts
+            mkdir build
+            cd build
+            cmake ..
+            make
             cd ../../ValidParentheses
             mkdir build
             cd build
@@ -192,6 +197,7 @@ jobs:
             ReverseLinkedListII/build
             ReverseString/build
             SortArray/build
+            ThreeEqualParts/build
             ValidParentheses/build
             ValidTriangleNumber/build
   test:
@@ -256,6 +262,8 @@ jobs:
             ./tests_reverse_string --gtest_output=XML
             cd ../../SortArray/build
             ./tests_sort_array --gtest_output=XML
+            cd ../../ThreeEqualParts/build
+            ./test --gtest_output=XML
             cd ../../ValidParentheses/build
             ./tests_valid_parent --gtest_output=XML
             cd ../../ValidTriangleNumber/build
