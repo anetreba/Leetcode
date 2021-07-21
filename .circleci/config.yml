@@ -122,6 +122,11 @@ jobs:
             cd build
             cmake ..
             make
+            cd ../../PushDominoes
+            mkdir build
+            cd build
+            cmake ..
+            make
             cd ../../ReduceArraySizetoTheHalf
             mkdir build
             cd build
@@ -191,6 +196,7 @@ jobs:
             NumMatchSubseq/build
             OpenTheLock/build
             OutOfBoundaryPaths/build
+            PushDominoes/build
             ReduceArraySizetoTheHalf/build
             RedundantConnection/build
             ReshapeMatrix/build
@@ -249,6 +255,8 @@ jobs:
             cd ../../OpenTheLock/build
             ./test --gtest_output=XML
             cd ../../OutOfBoundaryPaths/build
+            ./test --gtest_output=XML
+            cd ../../PushDominoes/build
             ./test --gtest_output=XML
             cd ../../ReduceArraySizetoTheHalf/build
             ./test --gtest_output=XML
