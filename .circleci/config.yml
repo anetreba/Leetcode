@@ -27,6 +27,11 @@ jobs:
             cd build
             cmake ..
             make
+            cd ../../BinaryTreePruning
+            mkdir build
+            cd build
+            cmake ..
+            make
             cd ../../4Sum
             mkdir build
             cd build
@@ -182,6 +187,7 @@ jobs:
           root: .
           paths: FibonacciNumber/build
             BinaryTreeLevelOrderTraversal/build
+            BinaryTreePruning/build
             4Sum/build
             CustomSortString/build
             EvaluateReversePolishNotation/build
@@ -224,6 +230,8 @@ jobs:
             ./tests_fib --gtest_output=XML
             cd ../../BinaryTreeLevelOrderTraversal/build
             ./tests_binaryTreeLevelOrderTraversal --gtest_output=XML
+            cd ../../BinaryTreePruning/build
+            ./test --gtest_output=XML
             cd ../../4Sum/build
             ./test --gtest_output=XML
             cd ../../CustomSortString/build
