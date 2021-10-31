@@ -157,6 +157,11 @@ jobs:
             cd build
             cmake ..
             make
+            cd ../../SearchInsertPosition
+            mkdir build
+            cd build
+            cmake ..
+            make
             cd ../../ShuffleAnArray
             mkdir build
             cd build
@@ -213,6 +218,7 @@ jobs:
             ReshapeMatrix/build
             ReverseLinkedListII/build
             ReverseString/build
+            SearchInsertPosition/build
             ShuffleAnArray/build
             SortArray/build
             ThreeEqualParts/build
@@ -282,6 +288,8 @@ jobs:
             ./test --gtest_output=XML
             cd ../../ReverseString/build
             ./tests_reverse_string --gtest_output=XML
+            cd ../../SearchInsertPosition/build
+            ./test --gtest_output=XML
             cd ../../ShuffleAnArray/build
             ./test --gtest_output=XML
             cd ../../SortArray/build
