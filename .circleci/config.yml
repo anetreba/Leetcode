@@ -27,6 +27,11 @@ jobs:
             cd build
             cmake ..
             make
+            cd ../../AddBinary
+            mkdir build
+            cd build
+            cmake ..
+            make
             cd ../../BinaryTreePruning
             mkdir build
             cd build
@@ -199,6 +204,7 @@ jobs:
             BinaryTreeLevelOrderTraversal/build
             BinaryTreePruning/build
             4Sum/build
+            AddBinary/build
             CustomSortString/build
             EvaluateReversePolishNotation/build
             FindCommonCharacters/build
@@ -245,6 +251,8 @@ jobs:
             cd ../../BinaryTreePruning/build
             ./test --gtest_output=XML
             cd ../../4Sum/build
+            ./test --gtest_output=XML
+            cd ../../AddBinary/build
             ./test --gtest_output=XML
             cd ../../CustomSortString/build
             ./test --gtest_output=XML
