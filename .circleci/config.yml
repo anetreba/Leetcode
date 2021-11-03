@@ -112,6 +112,11 @@ jobs:
             cd build
             cmake ..
             make
+            cd ../../MaximumSubarray
+            mkdir build
+            cd build
+            cmake ..
+            make
             cd ../../NumMatchSubseq
             mkdir build
             cd build
@@ -209,6 +214,7 @@ jobs:
             MaxArea/build
             MaxAreaOfIsland/build
             MaxConsecutiveOnesIII/build
+            MaximumSubarray/build
             NumMatchSubseq/build
             OpenTheLock/build
             OutOfBoundaryPaths/build
@@ -269,6 +275,8 @@ jobs:
             cd ../../MaxAreaOfIsland/build
             ./test --gtest_output=XML
             cd ../../MaxConsecutiveOnesIII/build
+            ./test --gtest_output=XML
+            cd ../../MaximumSubarray/build
             ./test --gtest_output=XML
             cd ../../NumMatchSubseq/build
             ./test --gtest_output=XML
