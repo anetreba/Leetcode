@@ -182,6 +182,11 @@ jobs:
             cd build
             cmake ..
             make
+            cd ../../TwoSum
+            mkdir build
+            cd build
+            cmake ..
+            make
             cd ../../ThreeEqualParts
             mkdir build
             cd build
@@ -233,6 +238,7 @@ jobs:
             SearchInsertPosition/build
             ShuffleAnArray/build
             SortArray/build
+            TwoSum/build
             ThreeEqualParts/build
             ValidParentheses/build
             ValidTriangleNumber/build
@@ -310,6 +316,8 @@ jobs:
             ./test --gtest_output=XML
             cd ../../SortArray/build
             ./tests_sort_array --gtest_output=XML
+            cd ../../TwoSum/build
+            ./test --gtest_output=XML
             cd ../../ThreeEqualParts/build
             ./test --gtest_output=XML
             cd ../../ValidParentheses/build
